@@ -1,29 +1,56 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
-import { Link } from "react-router-dom"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { Link } from "react-router-dom";
+import {SearchIcon} from './../../assets/SearchIcon.jsx'
 
 const Header = () => {
-
     return (
         <>
-            <Navbar isBordered>
-                <NavbarContent justify="start">
+            <Navbar isBordered >
+                <NavbarContent justify="center">
                     <NavbarBrand className="mr-4">
-                        <p className="hidden sm:block font-bold text-inherit">ACME</p>
+                        <p className="hidden sm:block font-bold text-inherit">Dhayan Drollat</p>
                     </NavbarBrand>
-                    <NavbarContent className="hidden sm:flex gap-3">
-                        <NavbarItem>
-                        <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
-                        </NavbarItem>
-                        <NavbarItem>
-                        <Link className="nav-link active" to="/cart">Carrito</Link>
-                        </NavbarItem>
-                        <NavbarItem>
-                        <Link className="nav-link active"  to="/about-us">Nosotros</Link>
-                        </NavbarItem>
-                        <NavbarItem>
-                        <Link className="nav-link active" to="/stores">Sucursales</Link>
-                        </NavbarItem>
-                    </NavbarContent>
+                </NavbarContent>
+
+                
+                <NavbarContent className="flex gap-6 ml-4">
+                    <NavbarItem>
+                        <Link 
+                            style={{ color: '#6D28D9', fontWeight: 'bold', fontSize: '1.5rem' }} 
+                            className="nav-link active" 
+                            aria-current="page" 
+                            to="/"
+                        >
+                            Inicio
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link 
+                            style={{ color: '#6D28D9', fontWeight: 'bold', fontSize: '1.5rem' }} 
+                            className="nav-link active" 
+                            to="/cart"
+                        >
+                            Carrito
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link 
+                            style={{ color: '#6D28D9', fontWeight: 'bold', fontSize: '1.5rem' }} 
+                            className="nav-link active" 
+                            to="/about-us"
+                        >
+                            Nosotros
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link 
+                            style={{ color: '#6D28D9', fontWeight: 'bold', fontSize: '1.5rem' }} 
+                            className="nav-link active" 
+                            to="/stores"
+                        >
+                            Sucursales
+                        </Link>
+                    </NavbarItem>
                 </NavbarContent>
 
                 <NavbarContent as="div" className="items-center" justify="end">
@@ -36,7 +63,7 @@ const Header = () => {
                         }}
                         placeholder="Type to search..."
                         size="sm"
-                      
+                        startContent={<SearchIcon size={18} />}
                         type="search"
                     />
                     <Dropdown placement="bottom-end">
@@ -70,7 +97,7 @@ const Header = () => {
                 </NavbarContent>
             </Navbar>
         </>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
